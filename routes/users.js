@@ -6,6 +6,9 @@ var productHelpers = require('../helpers/productHelpers')
 
 
 
+
+
+
 /* GET users listing. */
 router.get("/", (req, res) => {
   productHelpers.getAllProducts().then((products) => {
@@ -20,8 +23,10 @@ router.get("/add-product", (req, res) => {
 
 router.post("/add-product", (req, res, next) => {
   productHelpers.addProduct(req.body, (id) => {
+
     let image = req.files.Image;
     const imageName = id.jpg;
+
 
     image.mv('./public/product-images/' + id + '.jpg', (err) => {
       if (!err) {
@@ -38,17 +43,23 @@ router.post("/add-product", (req, res, next) => {
 router.get('/delete-product/:id', (req, res) => {
   let proId = req.params.id
   productHelpers.deleteProduct(proId).then((response) => {
-    res.redirect('/admin/')
+    res.redirect('/users')
   })
 })
+
 router.get('/edit-product/:id', async (req, res) => {
   let product = await productHelpers.getProductDetails(req.params.id)
-  res.render('admin/edit-product', { product })
+  res.render('users/edit-product', { product })
 })
+
+
 router.post('/edit-product/:id', (req, res) => {
+
+
+
   let id = req.params.id  // image id 
   productHelpers.updateProduct(req.params.id, req.body).then(() => {
-    res.redirect('/admin')
+    res.redirect('/users')
     if (req.files && req.files.Image) {
       const imageName = id.jpg;
       let image = req.files.Image

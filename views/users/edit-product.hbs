@@ -8,8 +8,7 @@
 
                 <h2 class="text-center">Edit Product</h2>
 
-
-                <form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
+                <form action="/users/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
 
                     <label for=""> Name </label>
                     <input type="text" name="Name" class="form-control" value="{{product.Name}}">
@@ -21,12 +20,12 @@
                     <label for="">price</label>
                     <input type="text" name="Price" class="form-control" value="{{product.Price}}">
 
-                    <label for="">Brand</label>
-                    <input type="text" name="Brand" class="form-control" value="{{product.Brand}}">
+                    <label for="">Discount</label>
+                    <input type="text" name="Brand" class="form-control" value="{{product.Discount}}">
 
 
-                    <label for="">Description</label>
-                    <input type="text" name="Description" class="form-control" value="{{product.Description}}">
+                    <label for="">Shipping Charge</label>
+                    <input type="text" name="Description" class="form-control" value="{{product.Charge}}">
 
 
                     <label for="">Image</label>

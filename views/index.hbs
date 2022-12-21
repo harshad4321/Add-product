@@ -5,6 +5,7 @@
 
             <div class="container-fluid  col-sm-12 col-md-8 offset-md-2">
                 <div class="row product-layout ">
+                    {{#if products}}
                     {{#each products}}
                     <div class="col-6 col-md-4 product-item">
                         <div class="pro-box">
@@ -15,16 +16,10 @@
                                             alt="Card image cap" style="height:12rem;" loading="lazy" />
                                         <div class="card-body">
                                             <h5 class="card-title">{{this.Name}}</h5>
-                                            <div class="showcase-rating">
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                                <ion-icon name="star-outline"></ion-icon>
-                                            </div>
                                             <p class="card-title">₹ {{this.Price}}</p>
+
                                 </a>
-                                <button onclick="addToCart('{{this._id}}')" class="btn btn-primary add-to-cart">
+                                <button onclick="#" class="btn btn-primary add-to-cart">
                                     Add
                                     to
                                     Cart</button>
@@ -34,6 +29,10 @@
                 </div>
             </div>
             {{/each}}
+            {{else}}
+            <h1>please add products first
+            </h1>
+            {{/if}}
         </div>
     </div>
     </div>
