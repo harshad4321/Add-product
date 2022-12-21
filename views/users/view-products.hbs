@@ -5,9 +5,9 @@
       <a href="/users/add-product" class="btn btn-success ml-auto">Add product</a>
     </div>
     <table class="table mt-5" id="table_id">
+      {{#if products}}
       <thead>
         <tr>
-
           <th scope="col">Title</th>
           <th scope="col">Category</th>
           <th scope="col">Price</th>
@@ -18,6 +18,7 @@
         </tr>
       </thead>
       <tbody>
+
         {{#each products}}
         <tr>
 
@@ -38,6 +39,10 @@
           </td>
         </tr>
         {{/each}}
+        {{else}}
+        <h1>Add products
+        </h1>
+        {{/if}}
       </tbody>
     </table>
   </div>
