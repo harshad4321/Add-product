@@ -1,0 +1,42 @@
+<section>
+    <div id="gw-layout" class="a-section a-spacing-none aok-relative">
+        <div>
+            <a href="/users" class="btn btn-success ml-auto">Add product</a>
+
+            <div class="container-fluid  col-sm-12 col-md-8 offset-md-2">
+                <div class="row product-layout ">
+                    {{#each products}}
+                    <div class="col-6 col-md-4 product-item">
+                        <div class="pro-box">
+                            <div class=" product-index-box">
+                                <a href="/over-view-product/{{this._id}}" class="col text-center product__link">
+                                    <div class="card" class="col text-center product__link">
+                                        <img class="img-fluid" src="/product-images/{{this._id}}.jpg"
+                                            alt="Card image cap" style="height:12rem;" loading="lazy" />
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{this.Name}}</h5>
+                                            <div class="showcase-rating">
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star"></ion-icon>
+                                                <ion-icon name="star-outline"></ion-icon>
+                                                <ion-icon name="star-outline"></ion-icon>
+                                            </div>
+                                            <p class="card-title">₹ {{this.Price}}</p>
+                                </a>
+                                <button onclick="addToCart('{{this._id}}')" class="btn btn-primary add-to-cart">
+                                    Add
+                                    to
+                                    Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</section>
